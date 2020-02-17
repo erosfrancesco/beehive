@@ -1,11 +1,11 @@
 class EmployedBee extends Bee {
-	constructor(foodSource, ...args) {
+	constructor(...args) {
 		super(...args)
-		this.foodSource = foodSource
+		// this.foodSource = foodSource
+		this.delta = 0.2
 	}
 
 	processFoodSource() {
-		console.log("processing food", this.foodSource)
 		if (!(this.foodSource && this.foodSource.available)) {
 			return 0
 		}
@@ -19,11 +19,7 @@ class EmployedBee extends Bee {
 		const food = this.processFoodSource()
 		this.hive.storeFood(food)
 
-		console.log(food)
-
-		// This limit could be changed or set based on...?
-		const limit = 0.2
-		if (food < limit) {
+		if (food < this.delta) {
 			this.hive.convertToScout(this.id)
 		}
 	}

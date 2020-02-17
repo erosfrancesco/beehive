@@ -2,6 +2,7 @@ class OnlookerBee extends Bee {
 	constructor(...args) {
 		super(...args)
 		this.interactions = {}
+		this.delta = 2
 	}
 
 	
@@ -28,7 +29,7 @@ class OnlookerBee extends Bee {
 
 		// parameters
 		const {value, foodSource} = this.preferredFoodSource
-		if (value < 20) {
+		if (value < this.delta) {
 			this.hive.convertToEmployed(this.id, foodSource)
 		}
 	}

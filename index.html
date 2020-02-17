@@ -10,22 +10,27 @@
 <script src="onlookerBee.js"></script>
 <script src="hive.js"></script>
 
+<script src="environment.js"></script>
+
 <script>
-    const hive = new Hive(5)
-    const foodSources = []
+
+    // Test
+    // const hive = new Hive(5)
+    // const foodSources = []
 
 
-    foodSources.push(new FoodSource(20, 100, 2))
-    foodSources.push(new FoodSource(10, 50, 3))
-    foodSources.push(new FoodSource(12, 20, 1))
-    foodSources.push(new FoodSource(15, 120, 1))
+    // foodSources.push(new FoodSource(20, 100, 2))
+    // foodSources.push(new FoodSource(10, 50, 3))
+    // foodSources.push(new FoodSource(12, 20, 1))
+    // foodSources.push(new FoodSource(15, 120, 1))
 
-    hive.convertToEmployed(0, foodSources[1])
-    hive.convertToEmployed(1, foodSources[2])
+    // hive.convertToEmployed(0, foodSources[1])
+    // hive.convertToEmployed(1, foodSources[2])
 
     hive.update()
     hive.update()
     hive.update()
+    // hive.update()
 
     console.log(hive)
 </script>

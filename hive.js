@@ -5,10 +5,9 @@ class Hive {
 		this.scouts = []
 		this.onlookers = []
 		this.food = 0
+		this.lastDeltaFood = 0
 
-		for (let i = 0; i < numberOfBees; i++) {
-			this.addBee()
-		}
+		Array(numberOfBees).forEach(foo => this.addBee())
 	}
 
 	//
@@ -17,16 +16,15 @@ class Hive {
 	}
 
 	storeFood(value) {
-		this.food += value
+		this.lastDeltaFood += value
 	}
 
+	discover() {}
+
 	update() {
-
-
-		this.bees.forEach(bee => {
-			console.log(bee)
-			bee.update()
-		})
+		this.lastDeltaFood = 0
+		this.bees.forEach(bee => bee.update() )
+		this.food += this.lastDeltaFood
 	}
 
 
@@ -44,9 +42,14 @@ class Hive {
 		this.onlookers[id] = this.bees[id]
 	}
 
-	convertToEmployed(id, foodSource) {
-		this.bees[id] = new EmployedBee(foodSource, id, this)
+	convertToEmployed(id) {
+		const employed = new EmployedBee(id, this)
+		const {foodSource, foodSourceHistory} = this.bees[id]
+		employed.foodSource = foodSource
+		employed.foodSourceHistory = foodSourceHistory
+
+		this.bees[id] = employed
 		this.onlookers.splice(id - 1, 1)
-		this.employed[id] = this.bees[id]
+		this.employed[id] = employed
 	}
 }
