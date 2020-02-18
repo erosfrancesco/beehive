@@ -1,15 +1,14 @@
 class Bee {
-	constructor(id, hive) {
+	constructor(id, hive, foodSourceHistory) {
 		this.id = id
 		this.hive = hive
-		this.foodSourceHistory = []
+		this.foodSourceHistory = foodSourceHistory || []
 	}
 
 	get foodSource() {
-		return this._foodSource
+		return this.foodSourceHistory[this.foodSourceHistory.length - 1]
 	}
 	set foodSource(v) {
-		this._foodSource = v
 		this.foodSourceHistory.push(v)
 	}
 

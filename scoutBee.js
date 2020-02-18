@@ -20,13 +20,16 @@ class ScoutBee extends Bee {
 
 		this.foodSource = this.hive.discover()
 
-		this.hive.convertToEmployed(this.id)
+		// check the history, or the ratio of employed
+		if (this.hive.employed.length < this.hive.bees.length * 2 / 3) {
+			this.hive.convertToEmployed(this.id)
+		} else {
+			this.hive.convertToOnlooker(this.id)
+		}
 		
-		// Get new foodSource
-		// void for now. It should be interesting setting a cost for scouting new resources
+		// It should be interesting setting a cost for scouting new resources
 
 		// when it should become a onlooker and when a employed?
-		// how to get a new food resource?
 	}
 
 }

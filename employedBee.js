@@ -1,7 +1,6 @@
 class EmployedBee extends Bee {
 	constructor(...args) {
 		super(...args)
-		// this.foodSource = foodSource
 		this.delta = 0.2
 	}
 

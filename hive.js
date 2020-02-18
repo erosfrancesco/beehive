@@ -6,8 +6,10 @@ class Hive {
 		this.onlookers = []
 		this.food = 0
 		this.lastDeltaFood = 0
-
-		Array(numberOfBees).forEach(foo => this.addBee())
+		
+		for(let i = 0; i < numberOfBees; i++) {
+			this.addBee()
+		}
 	}
 
 	//
@@ -20,6 +22,7 @@ class Hive {
 	}
 
 	discover() {}
+	extract() {}
 
 	update() {
 		this.lastDeltaFood = 0
@@ -31,25 +34,37 @@ class Hive {
 	// conversions
 	convertToScout(id) {
 		// what to do with the exausted foodSource?
-		this.bees[id] = new ScoutBee(id, this)
+		const {foodSourceHistory} = this.bees[id]
+		const scout = new ScoutBee(id, this, foodSourceHistory)
+
+		this.bees[id] = scout
 		this.employed.splice(id - 1, 1)
-		this.scouts[id] = this.bees[id]
+		this.scouts[id] = scout
 	}
 
 	convertToOnlooker(id) {
-		this.bees[id] = new OnlookerBee(id, this)
+		const {foodSourceHistory} = this.bees[id]
+		const onlooker = new OnlookerBee(id, this, foodSourceHistory)
+
+		this.bees[id] = onlooker
 		this.scouts.splice(id - 1, 1)
-		this.onlookers[id] = this.bees[id]
+		this.onlookers[id] = onlooker
 	}
 
 	convertToEmployed(id) {
-		const employed = new EmployedBee(id, this)
-		const {foodSource, foodSourceHistory} = this.bees[id]
-		employed.foodSource = foodSource
-		employed.foodSourceHistory = foodSourceHistory
+		const {foodSourceHistory} = this.bees[id]
+		const employed = new EmployedBee(id, this, foodSourceHistory)
 
+		
 		this.bees[id] = employed
-		this.onlookers.splice(id - 1, 1)
 		this.employed[id] = employed
+		if (!this.bees[id].interactions) {
+			// bee is not onlooker, so scout
+			this.scouts.splice(id - 1, 1)
+		} else {
+			this.onlookers.splice(id - 1, 1)
+		}
 	}
 }
+
+
