@@ -2,6 +2,8 @@
 
 Rude JS implementation of ABC (Artificial Bee Colony) algorithm (more info: https://en.wikipedia.org/wiki/Artificial_bee_colony_algorithm)
 
+Provides a rude interface for searching and extracting food sources.
+
 # Welcome to StackEdit!
 
 Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
@@ -146,6 +148,6 @@ B --> D{Rhombus}
 C --> D
 ```beehive
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTA3ODAwMTkyLC0xNTUzMDk1NDU1LC05OD
-c0OTc2OTVdfQ==
+eyJoaXN0b3J5IjpbOTM2MzIwNyw1MDc4MDAxOTIsLTE1NTMwOT
+U0NTUsLTk4NzQ5NzY5NV19
 -->
