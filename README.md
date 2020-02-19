@@ -1,4 +1,7 @@
-# Beehive swarm algorithm
+# ABC Swarm algorithm
+More info: [https://en.wikipedia.org/wiki/Artificial_bee_colony_algorithm](https://en.wikipedia.org/wiki/Artificial_bee_colony_algorithm)
+
+Rude implemABC (Artificial Bee Colony algorithm)
 
 # Welcome to StackEdit!
 
@@ -144,5 +147,6 @@ B --> D{Rhombus}
 C --> D
 ```beehive
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTMwOTU0NTUsLTk4NzQ5NzY5NV19
+eyJoaXN0b3J5IjpbLTY3NzY3NTk5OSwtMTU1MzA5NTQ1NSwtOT
+g3NDk3Njk1XX0=
 -->
