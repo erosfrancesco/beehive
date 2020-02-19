@@ -1,6 +1,6 @@
 # ABC Swarm algorithm
 
-Rude JS implementation of **ABC (Artificial Bee Colony)** algorithm -> [ ->more info](https://en.wikipedia.org/wiki/Artificial_bee_colony_algorithm)
+Rude JS implementation of **ABC (Artificial Bee Colony)** algorithm ->[more info](https://en.wikipedia.org/wiki/Artificial_bee_colony_algorithm)
 
 Provides a rude interface for searching and extracting food sources.
 Algorithm is still on development.
@@ -49,6 +49,6 @@ B --> D{Rhombus}
 C --> D
 ```beehive
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjk3NzI4MDg5LDUwNzgwMDE5MiwtMTU1Mz
+eyJoaXN0b3J5IjpbODQwODQwMDYyLDUwNzgwMDE5MiwtMTU1Mz
 A5NTQ1NSwtOTg3NDk3Njk1XX0=
 -->
