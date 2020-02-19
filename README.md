@@ -3,9 +3,9 @@
 Rude JS implementation of **ABC (Artificial Bee Colony)** algorithm (more info: https://en.wikipedia.org/wiki/Artificial_bee_colony_algorithm)
 
 Provides a rude interface for searching and extracting food sources.
-New food sources are discovered randomly but not randomly selected as candidates.
-For now.
-Algorithm is still in 
+
+For now, new food sources are discovered randomly, and new candidates are selected .
+Algorithm is still on development.
 
 
 # Files
@@ -147,6 +147,6 @@ B --> D{Rhombus}
 C --> D
 ```beehive
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDE2MTgwODIsNTA3ODAwMTkyLC0xNT
-UzMDk1NDU1LC05ODc0OTc2OTVdfQ==
+eyJoaXN0b3J5IjpbLTQ0Nzg2NjUwMCw1MDc4MDAxOTIsLTE1NT
+MwOTU0NTUsLTk4NzQ5NzY5NV19
 -->
