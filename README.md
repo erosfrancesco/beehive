@@ -1,12 +1,11 @@
 # ABC Swarm algorithm
 
-Rude JS implementation of ABC (Artificial Bee Colony) algorithm (more info: https://en.wikipedia.org/wiki/Artificial_bee_colony_algorithm)
+Rude JS implementation of **ABC (Artificial Bee Colony)** algorithm (more info: https://en.wikipedia.org/wiki/Artificial_bee_colony_algorithm)
 
 Provides a rude interface for searching and extracting food sources.
-
-# Welcome to StackEdit!
-
-Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
+New food sources are discovered randomly but not randomly selected as candidates.
+For now.
+Algorithm is still in 
 
 
 # Files
@@ -148,6 +147,6 @@ B --> D{Rhombus}
 C --> D
 ```beehive
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTM2MzIwNyw1MDc4MDAxOTIsLTE1NTMwOT
-U0NTUsLTk4NzQ5NzY5NV19
+eyJoaXN0b3J5IjpbLTE5MDE2MTgwODIsNTA3ODAwMTkyLC0xNT
+UzMDk1NDU1LC05ODc0OTc2OTVdfQ==
 -->
