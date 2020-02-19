@@ -142,7 +142,7 @@ A[Square Rect] -- Link text --> B((Circle))
 A --> C(Round Rect)
 B --> D{Rhombus}
 C --> D
-```
+```beehive
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4NzQ5NzY5NV19
+eyJoaXN0b3J5IjpbLTE1NTMwOTU0NTUsLTk4NzQ5NzY5NV19
 -->
