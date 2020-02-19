@@ -1,22 +1,22 @@
 class OnlookerBee extends Bee {
 	constructor(...args) {
 		super(...args)
-		this.interactions = {}
-		this.delta = 2
+		this.parameters.minFitness = 2
 	}
 
 	
+	// this should have a probability factor
 	get preferredFoodSource() {
-		return Object.keys(this.computedValues).reduce((accumulator, key) => {
-			const foodSource = this.computedValues[key]
-			return (accumulator.value < foodSource.value) ? foodSource : accumulator
+		return Object.keys(this.fitnesses).reduce((accumulator, key) => {
+			const foodSource = this.fitnesses[key]
+			return (accumulator.fitness < foodSource.fitness) ? foodSource : accumulator
 		}, 0)
 	}
 
 
-	interactWith(employedBee) {
-		const {foodSourceValue: value, foodSource} = employedBee
-		this.computedValues[employedBee.id] = {foodSource, value}
+	danceWith(employedBee) {
+		const {fitness, foodSource, id} = employedBee
+		this.fitnesses[id] = {foodSource, fitness}
 	}
 
 
@@ -24,12 +24,12 @@ class OnlookerBee extends Bee {
 	update() {
 		super.update()
 		
-		this.computedValues = {}
-		this.hive.employed.forEach(employedBee => this.interactWith(employedBee) )
+		this.fitnesses = {}
+		this.hive.employed.forEach(employedBee => this.danceWith(employedBee) )
 
 		// parameters
-		const {value, foodSource} = this.preferredFoodSource
-		if (value < this.delta) {
+		const {fitness, foodSource} = this.preferredFoodSource
+		if (fitness < this.parameters.minFitness) {
 			this.hive.convertToEmployed(this.id, foodSource)
 		}
 	}

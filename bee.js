@@ -3,6 +3,7 @@ class Bee {
 		this.id = id
 		this.hive = hive
 		this.foodSourceHistory = foodSourceHistory || []
+		this.parameters = {}
 	}
 
 	get foodSource() {

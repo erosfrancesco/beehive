@@ -19,7 +19,7 @@ hive.convertToScout(1)
 
 // Interface (Bridge pattern tecnically) for getting foodSources
 hive.discover = bee => {
-	// Should be filtered from the bee's history?
+	// Should we filter out the bee's history?
 
 	// Get a random available source
 	////////////////////////////////////////////////////
@@ -28,9 +28,11 @@ hive.discover = bee => {
 	////////////////////////////////////////////////////
 }
 
+// Interface (Bridge pattern tecnically) for extracting foodSources
 hive.extract = (bee, foodSource) => {
 
-	const {cost, available, distance} = foodSource
+	const {available} = bee
+	const {cost, distance} = foodSource
 
 	// Initial cost
 	////////////////////////////////////////////////////
@@ -38,11 +40,11 @@ hive.extract = (bee, foodSource) => {
 	const extractionCost = cost + distance
 
 	if (extractionCost >= available) {
-		foodSource.available = 0 // not necessary...
+		// foodSource.available = 0 // not necessary...
 		return 0
 	}
 
-	foodSource.available -= extractionCost
+	// foodSource.available -= extractionCost
 	////////////////////////////////////////////////////
 
 
@@ -51,11 +53,11 @@ hive.extract = (bee, foodSource) => {
 	// another type of bee efficiency as a parameter?
 	const alpha = available * 3 / 100
 	if (alpha >= available) {
-		foodSource.available = 0 // not necessary...
+		// foodSource.available = 0 // not necessary...
 		return 0
 	}
 
-	foodSource.available -= alpha
+	// foodSource.available -= alpha
 	////////////////////////////////////////////////////
 
 	return alpha

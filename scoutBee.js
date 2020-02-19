@@ -1,16 +1,17 @@
 class ScoutBee extends Bee {
 	constructor(...args) {
 		super(...args)
+		this.parameters.hiveEmployedRatio = 2 / 3
 	}
 
 
-	get foodSourceValue() {
+	get fitness() {
 		if (!this.foodSource) {
 			return 0
 		}
 		// some parameters
-		const {distance, available, cost} = this.foodSource
-		return available / distance / cost
+		const {distance, total, cost} = this.foodSource
+		return total / distance / cost
 	}
 
 
@@ -20,8 +21,8 @@ class ScoutBee extends Bee {
 
 		this.foodSource = this.hive.discover()
 
-		// check the history, or the ratio of employed
-		if (this.hive.employed.length < this.hive.bees.length * 2 / 3) {
+		// check the history of food source, or the ratio of employed
+		if (this.hive.employed.length < this.hive.bees.length * this.parameters.hiveEmployedRatio) {
 			this.hive.convertToEmployed(this.id)
 		} else {
 			this.hive.convertToOnlooker(this.id)

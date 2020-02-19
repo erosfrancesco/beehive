@@ -1,9 +1,11 @@
 class Hive {
 	constructor(numberOfBees) {
+		// bees
 		this.bees = []
 		this.employed = []
 		this.scouts = []
 		this.onlookers = []
+		// food
 		this.food = 0
 		this.lastDeltaFood = 0
 		
@@ -21,14 +23,18 @@ class Hive {
 		this.lastDeltaFood += value
 	}
 
-	discover() {}
-	extract() {}
-
 	update() {
 		this.lastDeltaFood = 0
+		// in case extraction / scouting are async?
+		// hive must keep track of them? or the bees should report with events?
 		this.bees.forEach(bee => bee.update() )
 		this.food += this.lastDeltaFood
 	}
+
+
+	// interface
+	discover() {}
+	extract(bee, foodSource) {}
 
 
 	// conversions
